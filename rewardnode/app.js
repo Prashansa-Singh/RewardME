@@ -22,12 +22,14 @@ const app = express();
  *  - Authentication
  *  - Get cards
  *
- *  Visualise
+ *  Visualise routes
  *  open two terminal commands and navigate both into `rewardnode`
+ *  also open a browser
  *  - terminal1 type in: node app.js
- *      this spawn up the app and start to listen
+ *      this spawn up the app/server and start the listening
  *  - terminal2 type in: curl localhost:9876/test
  *      an url address specified
+ *  - type in localhost:9876 on the browser
  * */
 
 app.listen(9876, () => {
