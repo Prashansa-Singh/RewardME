@@ -17,6 +17,8 @@ import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 
+import testdata from "../testdata";
+
 const Wallet = () => {
   return (
     <React.Fragment>
@@ -24,11 +26,10 @@ const Wallet = () => {
       <CssBaseline />
       <Container maxWidth="sm">
         <Grid container spacing={2}>
-          <RewardCard />
-          <RewardCard />
-          <RewardCard />
-          <RewardCard />
-          <RewardCard />
+          {/* <RewardCard /> */}
+          {testdata.map((card) => {
+            return <RewardCard key={card.id} {...card}></RewardCard>;
+          })}
         </Grid>
       </Container>
     </React.Fragment>
@@ -36,26 +37,43 @@ const Wallet = () => {
 };
 
 //The card
-function RewardCard() {
+// function RewardCard() {
+//   return (
+//     <Grid item xs={12}>
+//       <Item>
+//         <Card sx={{ maxWidth: 345 }}>
+//           <CardActionArea>
+//             <CardMedia
+//               component="img"
+//               height="200"
+//               image="https://www.nab.com.au/content/dam/nabrwd/personal/banking/images/nab-rewards-platinum-card.png"
+//               alt=""
+//             />
+//             <CardContent>
+//               <Typography variant="h6" component="div">
+//                 Card Name
+//               </Typography>
+//             </CardContent>
+//           </CardActionArea>
+//         </Card>
+//       </Item>
+//     </Grid>
+//   );
+// }
+
+function RewardCard(props) {
+  const { id, name, img } = props;
+  console.log(props);
   return (
     <Grid item xs={12}>
       <Item>
         <Card sx={{ maxWidth: 345 }}>
           <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image="https://www.nab.com.au/content/dam/nabrwd/personal/banking/images/nab-rewards-platinum-card.png"
-              alt=""
-            />
+            <CardMedia component="img" height="200" image={img} alt="" />
             <CardContent>
               <Typography variant="h6" component="div">
-                Card Name
+                {name}
               </Typography>
-              {/* <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography> */}
             </CardContent>
           </CardActionArea>
         </Card>
