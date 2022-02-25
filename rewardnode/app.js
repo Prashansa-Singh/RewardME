@@ -3,8 +3,14 @@
  *
  * */
 
-function sayHello() {
-    console.log('Getting Started!')
-}
+const express = require('express');
+const {request, response} = require("express");
+const app = express();
 
-sayHello()
+/* request: incoming data
+ * response: outgoing data
+ * */
+app.get('/', (request, response) => {
+
+
+});
