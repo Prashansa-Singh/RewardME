@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
 // pages
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import Wallet from "./pages/Wallet";
 
 // This is the router for the whole website
 function App() {
@@ -15,6 +16,7 @@ function App() {
         {/* These are the individual routes */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/wallet" element={<Wallet />} />
       </Routes>
     </BrowserRouter>
   );
