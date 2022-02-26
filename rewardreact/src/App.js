@@ -1,13 +1,16 @@
 import React from "react";
 
 // react router
-import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // pages
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Wallet from "./pages/Wallet";
 import RewardCard from "./pages/RewardCard";
+
+//navbar
+import BottomNav from "./pages/BottomNav";
 
 // This is the router for the whole website
 function App() {
@@ -20,6 +23,7 @@ function App() {
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/reward-card" element={<RewardCard />} />
       </Routes>
+      <BottomNav />
     </BrowserRouter>
   );
 }
