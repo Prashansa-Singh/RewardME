@@ -56,6 +56,7 @@ const Home = () => {
           left: 40,
         }}
       >
+        <h2 align="center">Easy Breezy Sustainable Convenient and Socially Impactfully Reward Cards</h2>
         <Typography
           variant="h5"
           align="center"
