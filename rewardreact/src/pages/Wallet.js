@@ -16,17 +16,25 @@ import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
 
 import testdata from "../testdata";
 
 const Wallet = () => {
   return (
     <React.Fragment>
-      <SearchAppBar />
       <CssBaseline />
+      <SearchAppBar />
       <Container maxWidth="sm">
         <Grid container spacing={2}>
-          {/* <RewardCard /> */}
           {testdata.map((card) => {
             return <RewardCard key={card.id} {...card}></RewardCard>;
           })}
@@ -35,31 +43,6 @@ const Wallet = () => {
     </React.Fragment>
   );
 };
-
-//The card
-// function RewardCard() {
-//   return (
-//     <Grid item xs={12}>
-//       <Item>
-//         <Card sx={{ maxWidth: 345 }}>
-//           <CardActionArea>
-//             <CardMedia
-//               component="img"
-//               height="200"
-//               image="https://www.nab.com.au/content/dam/nabrwd/personal/banking/images/nab-rewards-platinum-card.png"
-//               alt=""
-//             />
-//             <CardContent>
-//               <Typography variant="h6" component="div">
-//                 Card Name
-//               </Typography>
-//             </CardContent>
-//           </CardActionArea>
-//         </Card>
-//       </Item>
-//     </Grid>
-//   );
-// }
 
 function RewardCard(props) {
   const { id, name, img } = props;
@@ -82,7 +65,7 @@ function RewardCard(props) {
   );
 }
 
-// Components for the navbar??
+// Components for the navbar
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -125,28 +108,91 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-//The top nav bar???
+//The top nav bar
 function SearchAppBar() {
+  // Temporary drawer (the side popup menu)
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {["All mail", "Trash", "Spam"].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
+  const anchor = "left";
+
+  //Return code
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <React.Fragment key={anchor}>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}
+              onClick={toggleDrawer(anchor, true)}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Drawer
+              anchor={anchor}
+              open={state[anchor]}
+              onClose={toggleDrawer(anchor, false)}
+            >
+              {list(anchor)}
+            </Drawer>
+          </React.Fragment>
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            MUI
+            RewardME
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -162,5 +208,24 @@ function SearchAppBar() {
     </Box>
   );
 }
+
+// function TemporaryDrawer() {
+//   return (
+//     <div>
+//       {["left", "right", "top", "bottom"].map((anchor) => (
+//         <React.Fragment key={anchor}>
+//           <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+//           <Drawer
+//             anchor={anchor}
+//             open={state[anchor]}
+//             onClose={toggleDrawer(anchor, false)}
+//           >
+//             {list(anchor)}
+//           </Drawer>
+//         </React.Fragment>
+//       ))}
+//     </div>
+//   );
+// }
 
 export default Wallet;
