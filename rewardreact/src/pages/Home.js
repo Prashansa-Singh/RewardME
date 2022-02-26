@@ -5,9 +5,6 @@ import fullLogoImg from "../res/RewardMEResized.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
 
-const winWidth = window.innerWidth;
-const winHeight = window.innerHeight;
-
 // fetch('http://localhost:8080/', {
 //     mode: 'cors',
 // })

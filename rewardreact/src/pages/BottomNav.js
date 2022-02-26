@@ -73,6 +73,14 @@ export default function BottomNav() {
           <BottomNavigationAction
             label="Account"
             value="Account"
+            icon={<AccountCircle />}
+            onClick={() => {
+              navigate("/account");
+            }}
+          />
+          <BottomNavigationAction
+            label="Account"
+            value="Account"
             icon={<Person />}
           />
         </BottomNavigation>
