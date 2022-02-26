@@ -13,6 +13,17 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+/**
+ * api testing
+ * */
+// fetch('http://localhost:8080/users')
+//     .then(res => console.log(res));
+//
+// fetch('http://localhost:8080/users/XX77777')
+//     .then(res => res.json())
+//     .then(data => console.log(data));
+
+
 function Copyright(props) {
   return (
     <Typography
