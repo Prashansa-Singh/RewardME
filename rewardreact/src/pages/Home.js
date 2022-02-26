@@ -50,7 +50,7 @@ const Home = () => {
           width: 337,
           height: 52,
           top: 306,
-          left: 48
+          left: 40
         }}
       >
         <Typography 
@@ -59,29 +59,9 @@ const Home = () => {
             fontFamily={"Poppins"}
             fontSize="24"
             fontWeight="500"
-          >
-            Slogan? 
-            <br/>Loyalty from your customers, rewards from your small businesses?
-          </Typography>
-      </div>
-      <div
-        style={{
-          position: 'absolute', 
-          width: 250,
-          height: 50,
-          top: 439,
-          left: 91
-        }}
-      >
-        <Typography 
-            variant="h5"
-            align="center"
-            fontFamily={"Poppins"}
-            fontSize="24"
-            fontWeight="500"
-          >
-            Our pitch goes here...
-          </Typography>
+        >
+          Store all your digital rewards cards in one place
+</Typography>
       </div>
   </div>
     
