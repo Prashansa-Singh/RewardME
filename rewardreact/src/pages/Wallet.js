@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
@@ -25,8 +24,8 @@ import ListItemText from "@mui/material/ListItemText";
 import AddCard from "@mui/icons-material/AddCard";
 
 import rLogoImg from "../res/RLogoScaled.png";
-import AddIcon from '@mui/icons-material/Add';
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import AddBoxIcon from "../res/add box.png";
+import SearchBoxIcon from "../res/search.png";
 
 
 const Wallet = () => {
@@ -207,47 +206,9 @@ function SearchAppBar() {
 }
 
 function TopBar() {
-  // Temporary drawer (the side popup menu)
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
-
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
-  };
-
-  const list = (anchor) => (
-    <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        <ListItem button key="Add Card">
-          <ListItemIcon>
-            <AddCard />
-          </ListItemIcon>
-          <ListItemText primary="Add Card" />
-        </ListItem>
-      </List>
-      <Divider />
-    </Box>
-  );
-
+  
   const anchor = "left";
 
-  //Return code
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="transparent" elevation={0}>
@@ -264,39 +225,27 @@ function TopBar() {
                 left: 20
               }}
           />
-          <SearchIcon
-            color="disabled"
-            style={{
-              position: 'absolute', 
-              top: 17,
-              left: 310
-            }}
+          <img 
+              src={SearchBoxIcon} 
+              alt="Search Box"
+              style={{
+                width: 30, 
+                height: 30, 
+                position: 'absolute', 
+                top: 15, 
+                left: 310
+              }}
           />
-          <CheckBoxOutlineBlankIcon 
-            fontSize="large"
-            color="disabled"
-            style={{
-              position: 'absolute', 
-              top: 11,
-              left: 304
-            }}
-          />
-          <AddIcon
-            color="disabled"
-            style={{
-              position: 'absolute', 
-              top: 17,
-              left: 350
-            }}
-          />
-          <CheckBoxOutlineBlankIcon 
-            fontSize="large"
-            color="disabled"
-            style={{
-              position: 'absolute', 
-              top: 11,
-              left: 344
-            }}
+          <img 
+              src={AddBoxIcon} 
+              alt="Add Box"
+              style={{
+                width: 30, 
+                height: 30, 
+                position: 'absolute', 
+                top: 15, 
+                left: 350
+              }}
           />
           </React.Fragment>
         </Toolbar>

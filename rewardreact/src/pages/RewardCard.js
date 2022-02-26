@@ -1,49 +1,92 @@
-import { Container, CssBaseline, Grid } from "@mui/material";
+import { Container, CssBaseline, Grid, Paper } from "@mui/material";
 import React from "react";
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from "@mui/material";
 import CardMedia from '@mui/material/CardMedia';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import SkipNextIcon from '@mui/icons-material/SkipNext';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import MenuIcon from '@mui/icons-material/Menu';
 import Item from "@mui/material/ListItem";
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import BackArrowIcon from "../res/back arrow.png";
+import BinIcon from "../res/trash icon.png";
+import Barcode from "../res/Bar Code.png";
+import CheckBoxIcon from "../res/check box.png";
+import ProgressBar from "../res/Progress Bar.png";
+import RedeemRewardRed from "../res/Redeem Reward (RED).png";
+import RedeemRewardGrey from "../res/Redeem Reward Grey.png";
+import CardBack from "../res/Wallet - Funky Cone Back.png";
+
 
 
 export default class RewardCard extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <DenseAppBar />
+        <TopBar />
         <CssBaseline />
         <Container maxWidth="sm">
-        <Grid container spacing={2}>
-          <MediaControlCard />
-        </Grid>
+          <CardToScan />
+        </Container>
+        <Container>
+          <BasicCard />
         </Container>
       </React.Fragment>
     );
   }
 }
 
-function MediaControlCard() {
+function TopBar() {
+  
+  const anchor = "left";
+
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" color="transparent" elevation={0}>
+        <Toolbar>
+          <React.Fragment key={anchor}>
+            <img
+              src={BackArrowIcon}
+              alt="Back Arrow Icon"
+              style={{
+                width: 36, 
+                height: 36, 
+                position: 'absolute', 
+                top: 20, 
+                left: 20
+              }} 
+            />
+            <img
+              src={BinIcon}
+              alt="Bin Icon"
+              style={{
+                width: 20, 
+                height: 20, 
+                position: 'absolute', 
+                top: 25, 
+                left: 370
+              }} 
+            />
+          </React.Fragment>
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
+}
+
+function CardToScan() {
   const theme = useTheme();
   return (
     <Grid item xs={12}>
       <Item>
-      <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345 }}>
           <CardActionArea>
-            <CardMedia component="img" image="https://lh3.googleusercontent.com/fife/AAWUweVKtJQawZJjUQHHl5cOkC39kLmy9sus6raYE_h942Il7QCHl3geOUxr1tsa64hvu0u_tdYagRrR0PXdF2qraRqG1VeMqia_nflEUwYz-f9Z6RTu_9KGLkzG2y4mpmdKBBFpY2qaU0HUHozhUbOy6yqFtTjeMCCms6soa1hyIaccKYTdZFhWL4kcODyTD_fxAa2N1gdBi3m1jIjEuzTiqr4TKO8oQTedyi6O88pgD_kfVPyoWpKBxT2l-i-Jf3zAlaK_oZ4Wx7Tyb746LqcbCOlyoilYPqFgc4yBDl8ElDgLnr0R5TzpZ6_WaE8FzVz1YFn_VrY25HvZ5C20vs8g3qOSR0p5kXSmfasx_VAtWxRRWykYe4uUiav4W5YMOnCuYGEtD28wFpLRhEN3FpmTEWkrUL0JL5WrIlOcNLe3E3wjwz-a4SMJeqGcRI6w11Q_a9nxXDtGLPkaPsrwC3Jc4jfaUaCksFHS5eaEdjBw_FGZGB-dN3BXQ4b-nOW1Smj6JuN0QKqxXHdE27enc30hO3gJF5Lo2oxa1OYDGiop6ERmbAd-QVCLp7F5902tNaju83VQgGhCZjmN1v4ifY6ls1toHCuoc6csTrquxYDV0o1aYx0zUqWEF3a3wvRiJokCAHJNoR9c1W5GFR_hPnWRQJLzgYVvVXZ2wvHzaRI5wUYC9cagjwEv8DIWzDCE3Zl7AnOGMwe4EapYIQrf2fe82GF_L92Pr7zuPuo=w1133-h1356" alt="" />
+            <CardMedia component="img" image={CardBack} alt="" />
           </CardActionArea>
         </Card>
       </Item>
@@ -51,30 +94,69 @@ function MediaControlCard() {
   );
 }
 
-function DenseAppBar() {
+const bull = (
+  <Box
+    component="span"
+    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+  >
+    •
+  </Box>
+);
+
+function BasicCard() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton 
-            size="large"
-            edge="start" 
-            color="inherit" 
-            aria-label="menu" 
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography 
-            variant="h6"
-            noWrap 
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            Reward Card
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <Grid item xs={12}>
+      <Item>
+        <Card sx={{ minWidth: 345, minHeight: 350 }}>
+          <CardContent>
+            <Typography
+              variant="h6"
+              align="center"
+              fontFamily={"Meeriweather"}
+              fontWeight="400"
+            >
+              RewardME Promotion
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              align="left"
+              fontFamily={"Meeriweather"}
+            >
+              Purchase any 3 more beverages to get a free Special Ed’s Tea Gift Pack
+            </Typography>
+            <img 
+              src={ProgressBar}
+              style={{
+                width: 320, 
+                height: 55, 
+                position: 'absolute', 
+                left: 30,
+                top: 110
+              }}
+            />
+            <img 
+              src={RedeemRewardGrey}
+              style={{
+                width: 155, 
+                height: 33, 
+                position: 'absolute', 
+                left: 115,
+                top: 180
+              }}
+            />
+            <img 
+              src={Barcode} 
+              style={{
+                width: 366, 
+                height: 99, 
+                position: 'absolute', 
+                left: 10,
+                top: 250
+              }}
+            />
+          </CardContent>
+        </Card>
+      </Item>
+    </Grid>
   );
 }
