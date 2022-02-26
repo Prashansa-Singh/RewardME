@@ -1,16 +1,29 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.10cbd2a5.js",
+    "main.js": "/static/js/main.f59ddea4.js",
     "static/js/787.ad96032d.chunk.js": "/static/js/787.ad96032d.chunk.js",
-    "static/media/RewardsME Logo R.png": "/static/media/RewardsME Logo R.6f8e2499bff0ff34b875.png",
+    "static/media/RLogoScaled.png": "/static/media/RLogoScaled.85aecb7231091b7b663e.png",
+    "static/media/6.png": "/static/media/6.3844802acb477f0cda12.png",
+    "static/media/1.png": "/static/media/1.3c88b9a55c49fff725c1.png",
+    "static/media/Wallet - Funky Cone Back.png": "/static/media/Wallet - Funky Cone Back.98c47c7af0536ca1de1f.png",
+    "static/media/2.png": "/static/media/2.8a216cca75e4aa1b8ca8.png",
+    "static/media/8.png": "/static/media/8.6da06f0fdb6119306a3b.png",
+    "static/media/11.png": "/static/media/11.920f5df772f66849dc03.png",
+    "static/media/7.png": "/static/media/7.1f7ad65a1a2ca4a72b0d.png",
+    "static/media/4.png": "/static/media/4.69959052c32a5babea62.png",
+    "static/media/10.png": "/static/media/10.dff01ecd6d8c9936c910.png",
+    "static/media/5.png": "/static/media/5.583e469dcce2c4a767f1.png",
+    "static/media/3.png": "/static/media/3.ed7e3432e2b5bdaec2e3.png",
+    "static/media/9.png": "/static/media/9.b9a8f574042fd9a4cc3e.png",
+    "static/media/RewardMEResized.png": "/static/media/RewardMEResized.6076a95d0e99781bdead.png",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.10cbd2a5.js.map": "/static/js/main.10cbd2a5.js.map",
+    "main.f59ddea4.js.map": "/static/js/main.f59ddea4.js.map",
     "787.ad96032d.chunk.js.map": "/static/js/787.ad96032d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.10cbd2a5.js"
+    "static/js/main.f59ddea4.js"
   ]
 }
