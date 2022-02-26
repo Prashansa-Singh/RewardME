@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -24,16 +24,28 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import AddCard from "@mui/icons-material/AddCard";
 
-import testdata from "../testdata";
-
 const Wallet = () => {
+  // // Fetch from nodejs
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/", {
+      mode: "cors",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <React.Fragment>
       <CssBaseline />
       <SearchAppBar />
       <Container maxWidth="sm">
         <Grid container spacing={2}>
-          {testdata.map((card) => {
+          {data.map((card) => {
             return <RewardCard key={card.id} {...card}></RewardCard>;
           })}
         </Grid>
@@ -44,7 +56,6 @@ const Wallet = () => {
 
 function RewardCard(props) {
   const { id, name, img } = props;
-  console.log(props);
   return (
     <Grid item xs={12}>
       <Item>
