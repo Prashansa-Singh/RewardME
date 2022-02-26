@@ -12,6 +12,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 /**
  * api testing
@@ -54,6 +55,12 @@ export default function SignIn() {
       password: data.get("password"),
     });
   };
+
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `/home`; 
+    navigate(path);
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -106,6 +113,7 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={routeChange}
             >
               Sign In
             </Button>

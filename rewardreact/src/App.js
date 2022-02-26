@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 // react router
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -16,6 +16,7 @@ import BottomNav from "./pages/BottomNav";
 
 // This is the router for the whole website
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>

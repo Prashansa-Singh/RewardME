@@ -5,9 +5,9 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Container, Typography } from "@mui/material";
-
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import { useNavigate } from "react-router-dom";
 
 const Account = () => {
   return (
@@ -76,25 +76,6 @@ function TopBar() {
     );
   }
 
-
-function ContainedButtons() {
-  return (
-    <Stack direction="row" spacing={2}>
-        <Button 
-            variant="contained" 
-            color="error" 
-            style={{
-                width: 200,
-                top: 670,
-                left: 110
-            }}
-        >
-            LOG OUT
-        </Button>
-    </Stack>
-  );
-}
-
 function OutlinedButtons() {
   return (
     <Stack  spacing={2}>
@@ -126,3 +107,28 @@ function OutlinedButtons() {
     </Stack>
   );
 }
+
+function ContainedButtons() {
+    let navigate = useNavigate(); 
+    const routeChange = () =>{ 
+        let path = '/login'; 
+        navigate(path);
+    }
+    return (
+      <Stack direction="row" spacing={2}>
+          <Button 
+              variant="contained" 
+              color="error" 
+              style={{
+                  width: 200,
+                  top: 670,
+                  left: 110
+              }}
+              onClick={routeChange}
+          >
+              LOG OUT
+          </Button>
+      </Stack>
+    );
+  }
+
