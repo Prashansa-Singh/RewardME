@@ -8,9 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Item from "@mui/material/ListItem";
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import BackArrowIcon from "../res/back arrow.png";
@@ -93,15 +91,6 @@ function CardToScan() {
     </Grid>
   );
 }
-
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
 
 function BasicCard() {
   return (

@@ -4,10 +4,12 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Paper from "@mui/material/Paper";
 import HomeIcon from "@mui/icons-material/Home";
 import AccountBalanceWallet from "@mui/icons-material/AccountBalanceWallet";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import MoreHoriz from "@mui/icons-material/MoreHoriz";
+import Person from "@mui/icons-material/Person";
+import ShoppingBag from "@mui/icons-material/ShoppingBag";
 import { useNavigate } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Outlet } from "react-router-dom";
+import AccountCircle from "@mui/icons-material/AccountCircle";
 
 const theme = createTheme({
   palette: {
@@ -50,7 +52,7 @@ export default function BottomNav() {
             value="Home"
             icon={<HomeIcon />}
             onClick={() => {
-              navigate("/");
+              navigate("/home");
             }}
           />
           <BottomNavigationAction
@@ -62,17 +64,24 @@ export default function BottomNav() {
             }}
           />
           <BottomNavigationAction
+            label="Discover"
+            value="Discover"
+            icon={<ShoppingBag />}
+            onClick={() => {
+              navigate("/discover");
+            }}
+          />
+          <BottomNavigationAction
             label="Account"
             value="Account"
             icon={<AccountCircle />}
-          />
-          <BottomNavigationAction
-            label="More"
-            value="More"
-            icon={<MoreHoriz />}
+            onClick={() => {
+              navigate("/account");
+            }}
           />
         </BottomNavigation>
       </Paper>
+      <Outlet />
     </ThemeProvider>
   );
 }
