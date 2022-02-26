@@ -22,18 +22,18 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import AddCard from "@mui/icons-material/AddCard";
+import { Link } from "react-router-dom";
 
 import rLogoImg from "../res/RLogoScaled.png";
 import AddBoxIcon from "../res/add box.png";
 import SearchBoxIcon from "../res/search.png";
 
-
 const Wallet = () => {
-  // // Fetch from nodejs
+  // Fetch from nodejs
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/", {
+    fetch("http://localhost:8080/wallet-info", {
       mode: "cors",
     })
       .then((res) => res.json())
@@ -61,15 +61,17 @@ const Wallet = () => {
 function RewardCard(props) {
   const { id, name, img } = props;
   return (
-    <Grid item xs={12}>
-      <Item>
-        <Card>
-          <CardActionArea>
-            <CardMedia component="img" image={img} alt="" />
-          </CardActionArea>
-        </Card>
-      </Item>
-    </Grid>
+    <Link to={`/launch/${name}`}>
+      <Grid item xs={12}>
+        <Item>
+          <Card>
+            <CardActionArea>
+              <CardMedia component="img" image={img} alt="" />
+            </CardActionArea>
+          </Card>
+        </Item>
+      </Grid>
+    </Link>
   );
 }
 
@@ -206,7 +208,6 @@ function SearchAppBar() {
 }
 
 function TopBar() {
-  
   const anchor = "left";
 
   return (
@@ -214,39 +215,39 @@ function TopBar() {
       <AppBar position="static" color="transparent" elevation={0}>
         <Toolbar>
           <React.Fragment key={anchor}>
-          <img 
-              src={rLogoImg} 
+            <img
+              src={rLogoImg}
               alt="R logo"
               style={{
-                width: 36, 
-                height: 36, 
-                position: 'absolute', 
-                top: 10, 
-                left: 20
+                width: 36,
+                height: 36,
+                position: "absolute",
+                top: 10,
+                left: 20,
               }}
-          />
-          <img 
-              src={SearchBoxIcon} 
+            />
+            <img
+              src={SearchBoxIcon}
               alt="Search Box"
               style={{
-                width: 30, 
-                height: 30, 
-                position: 'absolute', 
-                top: 15, 
-                left: 310
+                width: 30,
+                height: 30,
+                position: "absolute",
+                top: 15,
+                left: 310,
               }}
-          />
-          <img 
-              src={AddBoxIcon} 
+            />
+            <img
+              src={AddBoxIcon}
               alt="Add Box"
               style={{
-                width: 30, 
-                height: 30, 
-                position: 'absolute', 
-                top: 15, 
-                left: 350
+                width: 30,
+                height: 30,
+                position: "absolute",
+                top: 15,
+                left: 350,
               }}
-          />
+            />
           </React.Fragment>
         </Toolbar>
       </AppBar>

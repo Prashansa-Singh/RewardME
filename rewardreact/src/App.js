@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<BottomNav />}>
           <Route path="/home" element={<Home />} />
           <Route path="wallet" element={<Wallet />} />
-          <Route path="reward-card" element={<RewardCard />} />
+          <Route path=":slug" element={<RewardCard />} />
           <Route path="/discover" element={<Discover />} />
           <Route path="/account" element={<Account />} />
         </Route>
