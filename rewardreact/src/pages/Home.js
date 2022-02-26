@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import React from "react";
 import rLogoImg from "../res/RLogoScaled.png";
 import fullLogoImg from "../res/RewardMEResized.png";
