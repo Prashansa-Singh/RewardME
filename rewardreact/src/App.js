@@ -18,14 +18,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* These are the individual routes */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/wallet" element={<Wallet />} />
-        <Route path="/reward-card" element={<RewardCard />} />
-        <Route path="/discover" element={<Discover />} />
+        <Route path="/" element={<BottomNav />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="wallet" element={<Wallet />} />
+          <Route path="reward-card" element={<RewardCard />} />
+          <Route path="/discover" element={<Discover />} />
+        </Route>
+        <Route path="login" element={<Login />} />
       </Routes>
-      <BottomNav />
     </BrowserRouter>
   );
 }

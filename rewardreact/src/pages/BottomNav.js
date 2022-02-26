@@ -8,6 +8,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreHoriz from "@mui/icons-material/MoreHoriz";
 import { useNavigate } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Outlet } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -50,7 +51,7 @@ export default function BottomNav() {
             value="Home"
             icon={<HomeIcon />}
             onClick={() => {
-              navigate("/");
+              navigate("/home");
             }}
           />
           <BottomNavigationAction
@@ -65,6 +66,9 @@ export default function BottomNav() {
             label="Account"
             value="Account"
             icon={<AccountCircle />}
+            onClick={() => {
+              navigate("/login");
+            }}
           />
           <BottomNavigationAction
             label="More"
@@ -73,6 +77,7 @@ export default function BottomNav() {
           />
         </BottomNavigation>
       </Paper>
+      <Outlet />
     </ThemeProvider>
   );
 }
