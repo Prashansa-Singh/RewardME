@@ -4,8 +4,8 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Paper from "@mui/material/Paper";
 import HomeIcon from "@mui/icons-material/Home";
 import AccountBalanceWallet from "@mui/icons-material/AccountBalanceWallet";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import MoreHoriz from "@mui/icons-material/MoreHoriz";
+import Person from "@mui/icons-material/Person";
+import ShoppingBag from "@mui/icons-material/ShoppingBag";
 import { useNavigate } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Outlet } from "react-router-dom";
@@ -63,17 +63,17 @@ export default function BottomNav() {
             }}
           />
           <BottomNavigationAction
-            label="Account"
-            value="Account"
-            icon={<AccountCircle />}
+            label="Discover"
+            value="Discover"
+            icon={<ShoppingBag />}
             onClick={() => {
-              navigate("/login");
+              navigate("/discover");
             }}
           />
           <BottomNavigationAction
-            label="More"
-            value="More"
-            icon={<MoreHoriz />}
+            label="Account"
+            value="Account"
+            icon={<Person />}
           />
         </BottomNavigation>
       </Paper>
