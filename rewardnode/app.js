@@ -5,7 +5,14 @@
 
 const express = require('express');
 const {request, response} = require("express");
+const cors = require('./cors');
+
 const app = express();
+app.options('*', cors);
+app.use(cors)
+
+let http = require('http');
+let port = 9876;
 
 
 /**
@@ -30,18 +37,23 @@ const app = express();
  *  - terminal2 type in: curl localhost:9876/test
  *      an url address specified
  *  - type in localhost:9876 on the browser
+ *
+ *
+ * fetch data with React by making an HTTP request to here (api)
+ *
  * */
 
-app.listen(9876, () => {
+app.listen(port, () => {
 
-    console.log("Hi John!");
+    console.log("app lunched\n" +
+        "CORS-enabled for localhost:3000");
 
 })
 
 
 app.get('/', (request, response) => {
 
-    response.send("Hello Teebana");
+    response.send("RewardME APP");
 
 });
 
@@ -51,3 +63,4 @@ app.get('/test', (request, response) => {
     response.send("Hello Ed");
 
 });
+
