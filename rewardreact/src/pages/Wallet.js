@@ -24,6 +24,11 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import AddCard from "@mui/icons-material/AddCard";
 
+import rLogoImg from "../res/RLogoScaled.png";
+import AddIcon from '@mui/icons-material/Add';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+
+
 const Wallet = () => {
   // // Fetch from nodejs
   const [data, setData] = useState([]);
@@ -42,7 +47,7 @@ const Wallet = () => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <SearchAppBar />
+      <TopBar />
       <Container maxWidth="sm">
         <Grid container spacing={2}>
           {data.map((card) => {
@@ -195,6 +200,105 @@ function SearchAppBar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
+}
+
+function TopBar() {
+  // Temporary drawer (the side popup menu)
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        <ListItem button key="Add Card">
+          <ListItemIcon>
+            <AddCard />
+          </ListItemIcon>
+          <ListItemText primary="Add Card" />
+        </ListItem>
+      </List>
+      <Divider />
+    </Box>
+  );
+
+  const anchor = "left";
+
+  //Return code
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" color="transparent" elevation={0}>
+        <Toolbar>
+          <React.Fragment key={anchor}>
+          <img 
+              src={rLogoImg} 
+              alt="R logo"
+              style={{
+                width: 36, 
+                height: 36, 
+                position: 'absolute', 
+                top: 10, 
+                left: 20
+              }}
+          />
+          <SearchIcon
+            color="disabled"
+            style={{
+              position: 'absolute', 
+              top: 17,
+              left: 310
+            }}
+          />
+          <CheckBoxOutlineBlankIcon 
+            fontSize="large"
+            color="disabled"
+            style={{
+              position: 'absolute', 
+              top: 11,
+              left: 304
+            }}
+          />
+          <AddIcon
+            color="disabled"
+            style={{
+              position: 'absolute', 
+              top: 17,
+              left: 350
+            }}
+          />
+          <CheckBoxOutlineBlankIcon 
+            fontSize="large"
+            color="disabled"
+            style={{
+              position: 'absolute', 
+              top: 11,
+              left: 344
+            }}
+          />
+          </React.Fragment>
         </Toolbar>
       </AppBar>
     </Box>
