@@ -61,7 +61,7 @@ const Wallet = () => {
 function RewardCard(props) {
   const { id, name, img } = props;
   return (
-    <Link to={`/launch/${name}`}>
+    <Link to={`/${name}`}>
       <Grid item xs={12}>
         <Item>
           <Card>

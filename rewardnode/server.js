@@ -37,27 +37,70 @@ app.use("/users", userRouter);
 
 /* 
 Leo's garbage that he needs to get frontend working
-PLS DON'T DELETEEEEEE
+~~~~~~PLS DON'T DELETEEEEEE~~~~~~
  */
 
 const walletInfo = [
   {
     id: 1,
     name: "funky_cone",
-    img: "https://lh3.googleusercontent.com/fife/AAWUweVKtJQawZJjUQHHl5cOkC39kLmy9sus6raYE_h942Il7QCHl3geOUxr1tsa64hvu0u_tdYagRrR0PXdF2qraRqG1VeMqia_nflEUwYz-f9Z6RTu_9KGLkzG2y4mpmdKBBFpY2qaU0HUHozhUbOy6yqFtTjeMCCms6soa1hyIaccKYTdZFhWL4kcODyTD_fxAa2N1gdBi3m1jIjEuzTiqr4TKO8oQTedyi6O88pgD_kfVPyoWpKBxT2l-i-Jf3zAlaK_oZ4Wx7Tyb746LqcbCOlyoilYPqFgc4yBDl8ElDgLnr0R5TzpZ6_WaE8FzVz1YFn_VrY25HvZ5C20vs8g3qOSR0p5kXSmfasx_VAtWxRRWykYe4uUiav4W5YMOnCuYGEtD28wFpLRhEN3FpmTEWkrUL0JL5WrIlOcNLe3E3wjwz-a4SMJeqGcRI6w11Q_a9nxXDtGLPkaPsrwC3Jc4jfaUaCksFHS5eaEdjBw_FGZGB-dN3BXQ4b-nOW1Smj6JuN0QKqxXHdE27enc30hO3gJF5Lo2oxa1OYDGiop6ERmbAd-QVCLp7F5902tNaju83VQgGhCZjmN1v4ifY6ls1toHCuoc6csTrquxYDV0o1aYx0zUqWEF3a3wvRiJokCAHJNoR9c1W5GFR_hPnWRQJLzgYVvVXZ2wvHzaRI5wUYC9cagjwEv8DIWzDCE3Zl7AnOGMwe4EapYIQrf2fe82GF_L92Pr7zuPuo=w1133-h1356",
+    img: "https://cdn.discordapp.com/attachments/947107717972107314/947110114333175818/Funky_Cone.png",
   },
   {
     id: 2,
     name: "eds_authentic_tea",
-    img: "https://lh3.googleusercontent.com/fife/AAWUweVJGuYiThFdljEo1nN9wrH2xjxzVgYzmbqBsvAiaaSzXJBX7n9oMi15N9Wfvgd38IydDSQyc-NbDPlgEDQ7yL1E6-g16v8dlchwqOp4h3_ckG8qxjx_DN1LHrGw19aVRXoB02GQMc2K5e4bMSTKMFVY411ythVBKCgmJKo13vqHhNvUdQcSDcBrKmBy7HqS4tGiP_47EW4GDjml4uNZgVPrF0hM69BuumM_vdGHnMsWJmxGO4GEkuBZsraKLipFdiLXO5QxPhx57mIHQ8dihGzeHu4x2ABG6UA_OyJf71AaJRk9PH4l5beP6wOCVIRrFju29uuRp28gLPHI6Vyfr0quX9eSiNwPlh4ZwmSRxBQn-Kss75Gd9rYJDKYB4fhQ5kFL1TsIDH4whrxiDWTHlcWWf3zQJ4CvuRC6A6LkLN1WMwk5g080v82a_Myqsu7WAsHVQ9zt5hOJI4Gw81YYzZA9Wj2w8syyPU_S9lQcqYB_cv7auNGfnyEyYTyogUncL3E2ZpF_gFYwsfnTIZc4T24-fF89IH-kQwP2J9GffxMXrGp0UTA5Vuy41Mbq3ZKs-1TgIP---Yvpm39uwb-B8LoVOAvj2IrraZwMw815KKc1GlgQAsc7NdiaRyMGwDEhk7i-i6Vic1BFHc0NBTElaG8YqLwQOuCB6Ey_s3GKgw72EgA4FNThluWofble9YSG662JPzf1HsGwu0TM9qaPLuN1EDzTueSV2Ds=w1133-h974",
+    img: "https://cdn.discordapp.com/attachments/947107717972107314/947110115247546429/Ed_s_Authentic_Tea_Front.png",
   },
   {
     id: 3,
     name: "castros_burgers",
-    img: "https://lh3.googleusercontent.com/fife/AAWUweVVIp0TjgfyD-QGo0B0ajsMP3t6E8olCgJgVNUv1BqwswWWHyIh8rcasq5yAZXM4VhSMLqmVxSI3VnXuQ5xFEyhXxLyc7h63rkvRsihXgFX4XvUIbuGnro3AVmQWtNfTnqTtcCciCa9k73VVwwhwXq0LvGDDwGy6vz5zOnYT6FVsXMQUie_pg8RMDoDzpMhCpVGIhUzdQvhqCKCogMVZxscbRZGY68syF0rO_DDjnYgYmY9DWmFtmYyQNTrY-uGX2o1LPGqj6lEmp4KvbWMTqnBmRdm9Q09Qj9Ltv9X_rszMMbxtzL1FppMq1y8pwuu4-zcGANQKJ3IvBx73P9frKq0Up-B6_TlAnRe-iM7FnE0Cc5I2KDylqHwekiwhrVuGWzM4dlo4gMo8hoL_Id1wagpwRE0_ZP2z4fbIkWfRjDualRz3jb4b0UNiskQxdSTHicJyW8fsLSdxp7Rud2HiwscWbrx_QI-i02bZrquobu1Wy1kQu-KETDLvHM5LCFbhlmn_JTnZRY7ezr-NEOATQXwROxfXw03VpKywAFiauSc0V9ejsSSyTrJBxtsZ-_3pSyVBgenO9loO69TVuytpEZ9HK78S8ed-FdShoz372K8bORbVpbkslcruXrhnVm4S3uwzjievK92D6VycbJDeqyHtj_adDFB3WxWN92XISfe0y4WrRsVP45hb27xPrsC_uoKD21K4NhN-tvve2bwB9_SLcaRBzgeqBc=w1133-h974",
+    img: "https://cdn.discordapp.com/attachments/947107717972107314/947110114765205514/Castro_s_Burger_Front.png",
   },
 ];
 
 app.get("/wallet-info", (request, response) => {
   response.json(walletInfo);
+});
+
+const cardInfo = {
+  funky_cone: {
+    cardBackImg:
+      "https://cdn.discordapp.com/attachments/947107717972107314/947110115532746752/Funky_Cone_Back.png",
+    promoMsg:
+      "Purchase another Funky Cone and get another with any free toppings",
+    barcode:
+      "https://cdn.discordapp.com/attachments/946567129677856788/947107249178943548/Bar_Code.png",
+    progress:
+      "https://cdn.discordapp.com/attachments/947107717972107314/947125150858489866/4_ticks.png",
+    reward:
+      "https://cdn.discordapp.com/attachments/947107717972107314/947124877977079818/Redeem_Reward_Grey.png",
+  },
+  eds_authentic_tea: {
+    cardBackImg:
+      "https://cdn.discordapp.com/attachments/947107717972107314/947110115037814875/Ed_s_Authentic_Tea_Back.png",
+    promoMsg:
+      "Purchase any 3 more beverages to get a free Special Ed's Tea Gift Pack",
+    barcode:
+      "https://cdn.discordapp.com/attachments/946567129677856788/947107249178943548/Bar_Code.png",
+    progress:
+      "https://cdn.discordapp.com/attachments/947107717972107314/947125150669766696/Progress_Bar.png",
+    reward:
+      "https://cdn.discordapp.com/attachments/947107717972107314/947124877977079818/Redeem_Reward_Grey.png",
+  },
+  castros_burgers: {
+    cardBackImg:
+      "https://cdn.discordapp.com/attachments/947107717972107314/947110114547073094/Castro_s_Burger_Back.png",
+    promoMsg:
+      "You are eligible for a 30% off discount for making 6 Supreme Castro Burger purchase ",
+    barcode:
+      "https://cdn.discordapp.com/attachments/946567129677856788/947107249178943548/Bar_Code.png",
+    progress:
+      "https://cdn.discordapp.com/attachments/947107717972107314/947125150460027011/Full_ticks_progress.png",
+    reward:
+      "https://cdn.discordapp.com/attachments/947107717972107314/947124878153248798/Redeem_Reward_RED.png",
+  },
+};
+
+app.get("/card-info", (request, response) => {
+  response.json(cardInfo);
 });
