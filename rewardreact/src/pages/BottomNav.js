@@ -9,6 +9,7 @@ import ShoppingBag from "@mui/icons-material/ShoppingBag";
 import { useNavigate } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Outlet } from "react-router-dom";
+import AccountCircle from "@mui/icons-material/AccountCircle";
 
 const theme = createTheme({
   palette: {
