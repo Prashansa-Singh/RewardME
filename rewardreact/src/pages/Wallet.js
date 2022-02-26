@@ -17,14 +17,12 @@ import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import AddCard from "@mui/icons-material/AddCard";
 
 import testdata from "../testdata";
 
@@ -50,14 +48,9 @@ function RewardCard(props) {
   return (
     <Grid item xs={12}>
       <Item>
-        <Card sx={{ maxWidth: 345 }}>
+        <Card>
           <CardActionArea>
-            <CardMedia component="img" height="200" image={img} alt="" />
-            <CardContent>
-              <Typography variant="h6" component="div">
-                {name}
-              </Typography>
-            </CardContent>
+            <CardMedia component="img" image={img} alt="" />
           </CardActionArea>
         </Card>
       </Item>
@@ -137,26 +130,14 @@ function SearchAppBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem button key="Add Card">
+          <ListItemIcon>
+            <AddCard />
+          </ListItemIcon>
+          <ListItemText primary="Add Card" />
+        </ListItem>
       </List>
       <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
     </Box>
   );
 
@@ -208,24 +189,5 @@ function SearchAppBar() {
     </Box>
   );
 }
-
-// function TemporaryDrawer() {
-//   return (
-//     <div>
-//       {["left", "right", "top", "bottom"].map((anchor) => (
-//         <React.Fragment key={anchor}>
-//           <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-//           <Drawer
-//             anchor={anchor}
-//             open={state[anchor]}
-//             onClose={toggleDrawer(anchor, false)}
-//           >
-//             {list(anchor)}
-//           </Drawer>
-//         </React.Fragment>
-//       ))}
-//     </div>
-//   );
-// }
 
 export default Wallet;
