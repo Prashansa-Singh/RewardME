@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Wallet from "./pages/Wallet";
 import RewardCard from "./pages/RewardCard";
+import Discover from "./pages/Discover";
 
 //navbar
 import BottomNav from "./pages/BottomNav";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/reward-card" element={<RewardCard />} />
+        <Route path="/discover" element={<Discover />} />
       </Routes>
       <BottomNav />
     </BrowserRouter>
