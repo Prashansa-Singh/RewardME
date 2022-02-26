@@ -5,11 +5,16 @@ import fullLogoImg from "../res/RewardMEResized.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
 
-// fetch('http://localhost:8080/', {
-//     mode: 'cors',
-// })
-//     .then(res => res.json())
-//     .then(data => console.log(data));
+const winWidth = window.innerWidth;
+const winHeight = window.innerHeight;
+
+/** test connection
+ *  Welcome to RewardME!
+ * */
+fetch('http://localhost:8080/', {mode: 'cors',})
+    .then(res => res.json())
+    .then(data => console.log(data));
+    
 
 const Home = () => {
   return (
