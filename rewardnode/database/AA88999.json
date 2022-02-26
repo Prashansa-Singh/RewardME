@@ -1,0 +1,13 @@
+{
+  "user_id": "AA88999",
+  "user_type": "Business",
+
+  "user_name": "Funky Cone",
+  "reward_threshold": 4,
+
+
+  "reward_item": 922,
+  "reward_item_description": "Funky Cone and Free Toppings",
+  "item_amount": 1,
+  "reward_description": "Purchase another Funky Cone and get another with any free toppings"
+}

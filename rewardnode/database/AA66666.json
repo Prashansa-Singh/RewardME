@@ -1,0 +1,13 @@
+{
+  "user_id": "AA66666",
+  "user_type": "Business",
+
+  "user_name": "Ed's Authentic Tea",
+  "reward_threshold": 6,
+
+
+  "reward_item": 999,
+  "reward_item_description": "Tea Pack",
+  "item_amount": 1,
+  "reward_description": "Purchase any 3 more beverages to get a free Special Ed’s Tea Gift Pack"
+}

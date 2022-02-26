@@ -1,0 +1,13 @@
+{
+  "user_id": "AA34322",
+  "user_type": "Business",
+
+  "user_name": "Castro",
+  "reward_threshold": 6,
+
+
+  "reward_item": 120,
+  "reward_item_description": "30% discount",
+  "item_amount": 1,
+  "reward_description": "Purchase another Supreme Castro Giant Burger to get 30% off your next purchase"
+}
