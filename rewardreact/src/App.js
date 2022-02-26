@@ -24,15 +24,9 @@ function App() {
           <Route path="wallet" element={<Wallet />} />
           <Route path="reward-card" element={<RewardCard />} />
           <Route path="/discover" element={<Discover />} />
+          <Route path="/account" element={<Account />} />
         </Route>
         <Route path="login" element={<Login />} />
-        {/* These are the individual routes */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/wallet" element={<Wallet />} />
-        <Route path="/reward-card" element={<RewardCard />} />
-        <Route path="/discover" element={<Discover />} />
-        <Route path="/account" element={<Account />} />
       </Routes>
     </BrowserRouter>
   );

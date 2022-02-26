@@ -79,11 +79,6 @@ export default function BottomNav() {
               navigate("/account");
             }}
           />
-          <BottomNavigationAction
-            label="Account"
-            value="Account"
-            icon={<Person />}
-          />
         </BottomNavigation>
       </Paper>
       <Outlet />
