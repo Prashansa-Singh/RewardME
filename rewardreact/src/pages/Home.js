@@ -57,20 +57,11 @@ const Home = () => {
           position: "absolute",
           width: 337,
           height: 52,
-          top: 306,
+          top: 350,
           left: 40,
         }}
       >
-        <h2 align="center">Easy Breezy Sustainable Convenient and Socially Impactfully Reward Cards</h2>
-        <Typography
-          variant="h5"
-          align="center"
-          fontFamily={"Poppins"}
-          fontSize="24"
-          fontWeight="500"
-        >
-          Store all your digital rewards cards in one place
-        </Typography>
+        <h2 align="center">Capture all your local rewards with RewardME – sustainable, convenient and socially impactful!</h2>
       </div>
     </div>
   );
